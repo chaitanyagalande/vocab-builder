@@ -22,15 +22,15 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
                 <div class="flashcard-container">
                     <div class="top-buttons">
-                        <a id="barron-333" onclick="loadWords('words.json')">Barron's 333</a>
-                        <a id="barron-800" onclick="loadWords('words2.json')">Barron's 800</a>
+                        <a id="barron-333" class="active" onclick="loadWords('words.json', 'barron-333')">Barron's 333</a>
+                        <a id="barron-800" onclick="loadWords('words2.json', 'barron-800')">Barron's 800</a>
                     </div>
                     <button class="btn btn-primary prev-btn" onclick="prevCard()"><i
                             class="bi bi-chevron-left"></i></button>
                     <div id="flashcard" class="flashcard">
                         <h2 id="word"></h2>
                         <hr>
-                        <p><strong>Meaning:</strong> <span id="meaning"></span></p>
+                        <p><span id="meaning"></span></p>
                         <hr>
                         <p><span id="synonyms"></span></p>
                         <p><strong>Sentence:</strong> <span id="sentence"></span></p>

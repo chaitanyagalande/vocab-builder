@@ -88,7 +88,15 @@ function showCard(index) {
 
 document.addEventListener('DOMContentLoaded', loadFlashcards);
 
-function loadWords(filename) {
+function loadWords(filename, buttonId) {
+    // Remove active class from all buttons
+    document.getElementById('barron-333').classList.remove('active');
+    document.getElementById('barron-800').classList.remove('active');
+
+    // Add active class to the clicked button
+    document.getElementById(buttonId).classList.add('active');
+
+    // Fetch and load the JSON data
     fetch(filename)
         .then(response => response.json())
         .then(data => {
@@ -97,5 +105,5 @@ function loadWords(filename) {
             displayCard(currentIndex);
             populateWordList();
         })
-        .catch(error => console.error('Error loading words2.json:', error));
+        .catch(error => console.error(`Error loading ${filename}:`, error));
 }

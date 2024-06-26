@@ -141,6 +141,14 @@ body {
     color: #fff;
 }
 
+.top-buttons .active {
+    background-color: #005A9C !important;
+}
+
+.top-buttons a:hover {
+    text-decoration: none;
+}
+
 /* Adjustments for small screens */
 @media (max-width: 767.98px) {
     .sidebar {
