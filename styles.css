@@ -1,10 +1,35 @@
+/* For WebKit based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
 
 .flashcard-container {
-    text-align: center;
-    margin-top: 50px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .flashcard {
@@ -12,15 +37,41 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+    width: 400px;
+    min-height: 300px; /* Fixed height for flashcard */
+    overflow: hidden; /* Hide overflow content */
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    max-width: 500px;
-    margin: 20px auto 0;
+.flashcard h2,
+.flashcard p {
+    margin-bottom: 10px;
+}
+
+.flashcard h2 {
+    color: #005A9C;
+    font-weight: 600;
+}
+
+.prev-btn, .next-btn {
+    margin: 0 30px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #000000;
+}
+
+.prev-btn:focus , .next-btn:focus {
+    outline: none !important; /* Remove default outline */
+    box-shadow: none !important;
+    background-color: #555555 !important;
 }
 
 .sidebar {
@@ -28,13 +79,63 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 20px;
     overflow-y: auto; /* Added to make the sidebar scrollable */
+    padding: 0;
 }
 
 #sidebar .nav-link {
     color: #000;
     cursor: pointer;
+}
+
+.synonym-button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.synonym-button:hover {
+    color: #fff;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+#barron-800 {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#barron-333 {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.nav-item.active {
+    background-color: #000000;;
+}
+
+.nav-item.active a {
+    color: #fff !important;
+}
+
+/* Style for total count */
+.total-count {
+    padding: 10px 16px;
+    background-color: #000;
+    color: #fff;
 }
 
 /* Adjustments for small screens */
@@ -45,5 +146,21 @@ body {
     }
     main {
         margin-left: 0;
+    }
+    .prev-btn, .next-btn {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 10px auto;
+    }
+    .flashcard-container {
+        margin-top: 20px;
+    }
+    .flashcard {
+        height: auto;
+    }
+    .flashcard-content {
+        position: static;
+        transform: none;
     }
 }
