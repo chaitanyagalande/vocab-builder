@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.flashcard-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.flashcard {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto; /* Added to make the sidebar scrollable */
+}
+
+#sidebar .nav-link {
+    color: #000;
+    cursor: pointer;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 767.98px) {
+    .sidebar {
+        height: auto;
+        position: relative;
+    }
+    main {
+        margin-left: 0;
+    }
+}
