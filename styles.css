@@ -19,6 +19,17 @@
     background: #555;
 }
 
+.rotate-device {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 24px;
+    color: #555;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -210,4 +221,19 @@ body {
         margin: 10px 0;
         border-color: #fff;
     }   
+}
+
+@media (max-width: 400px) {
+    .container-fluid {
+        display: none;
+    }
+
+    .rotate-device {
+        display: block;
+    }
+
+    .rotate-device i {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
 }
