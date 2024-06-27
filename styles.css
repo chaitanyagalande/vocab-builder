@@ -223,7 +223,7 @@ body {
     }   
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .container-fluid {
         display: none;
     }
