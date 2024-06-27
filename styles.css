@@ -5,7 +5,7 @@
 
 /* Track (the background of the scrollbar) */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    /* background: #ffffff; */
 }
 
 /* Handle (the draggable part of the scrollbar) */
@@ -103,7 +103,7 @@ body {
 
 .top-buttons {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -145,33 +145,69 @@ body {
     background-color: #005A9C !important;
 }
 
+.top-buttons a {
+    text-decoration: none;
+}
+
 .top-buttons a:hover {
     text-decoration: none;
 }
 
+#offcanvas-toggle-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    font-size: 20px;
+}
+
+#offcanvasRight {
+    width: 600px;
+}
+
+.alphabet-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.alphabet-buttons button {
+    width: calc(100% / 13 - 10px); /* Calculate width to fit 13 buttons in a row with gaps */
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #787878;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #787878;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.reset-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.alphabet-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
 /* Adjustments for small screens */
-@media (max-width: 767.98px) {
-    .sidebar {
-        height: auto;
-        position: relative;
-    }
-    main {
-        margin-left: 0;
-    }
-    .prev-btn, .next-btn {
-        position: static;
-        transform: none;
-        display: block;
-        margin: 10px auto;
-    }
-    .flashcard-container {
-        margin-top: 20px;
-    }
-    .flashcard {
-        height: auto;
-    }
-    .flashcard-content {
-        position: static;
-        transform: none;
-    }
+@media (max-width: 1000px) {
+    hr {
+        margin: 10px 0;
+        border-color: #fff;
+    }   
 }
